@@ -1,0 +1,12 @@
+[
+    [1, "Carrots", 2, "Kg", "Fresh Vegitables", "Food Stuffs"],
+    [2, "Apples", 2, "Kg", "Fresh Fruits", "Food Stuffs"],
+    [3, "Eggs", 10, "Nos", "Refrigerated Items", "Food Stuffs"],
+    [4, "Fish Sticks", 1, "Pkt", "Frozen", "Food Stuffs"],
+    [5, "Rice", 5, "Kg", "Various Groceries", "Food Stuffs"],
+    [6, "Olive Oil", 2, "Ltr", "Various Groceries", "Food Stuffs"],
+    [7, "Tooth Paste", 200, "Gram", "Personal Care", "HouseHold"],
+    [8, "Bath Soap", 10, "Nos", "Personal Care", "HouseHold"],
+    [9, "Aluminium Foil", 1, "Roll", "Kitchen", "HouseHold"],
+    [10, "Detergent", 2, "Kg", "Cleaning Products", "HouseHold"]
+]

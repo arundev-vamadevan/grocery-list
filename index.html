@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Shopping List</title>
+</head>
+<style>
+
+table, th, td {
+ 
+  border-collapse: collapse;
+  }
+
+th {
+    padding: 15px;
+    background-color: dimgray;
+    color: white;
+}
+
+td {
+    padding: 15px;
+    color: dimgray;
+    
+}
+h1{
+    color: dimgray;
+    padding-left: 500px;
+}
+
+#grocery-table{
+    margin-left: 350px;
+}
+
+hr {
+  border: 0;
+  border: 1px solid dimgray;
+  clear:both;
+  display:block;
+  width: 50%;               
+  height: 1px;
+  background-color: dimgray;
+  
+}
+
+body{
+ align-content: center;
+}
+
+</style>
+
+<body>
+    <H1>Grocery Shopping List</H1>
+        <table class="table" id = "grocery-table"> 
+          <thead>
+            <tr> 
+                <th>Serial No</th> 
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Unit</th> 
+                <th>Department</th>
+                <th>Notes</th>    
+            </tr> 
+          </thead> 
+          <tbody>
+            
+           </tbody>
+        </table>
+<hr>
+    
+<script type="text/javascript">
+
+const result=document.querySelector("#grocery-table > tbody");
+
+function loadList()
+{
+    const request = new XMLHttpRequest();
+    request.open("get","data/list.json");
+    request.onload = () => {
+        try{
+            const json = JSON.parse(request.responseText);
+            populateList(json);
+        }
+        catch(e) {
+            console.warn("Could not load list items! ");
+        }
+    }
+   
+   request.send();
+
+}
+
+function populateList(json)
+{
+  while(result.firstChild) {
+    result.removeChild(result.firstChild);
+
+    }
+
+    json.forEach((row) => {
+    const tr= document.createElement("tr");
+
+    row.forEach((cell) => {
+        const td = document.createElement("td");
+        td.textContent = cell;
+        tr.appendChild(td);
+    });
+    
+    result.appendChild(tr);
+});
+
+}
+
+
+
+document.addEventListener("DOMContentLoaded", () => { loadList(); });
+
+</script>
+
+</body>
+
+</html>
